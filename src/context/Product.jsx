@@ -5,7 +5,7 @@ const ProductContext = createContext(null);
 const ProductProvider = function ({ children }) {
   const [product, setProduct] = useState(null);
   return (
-    <ProductContext.Provider value={(product, setProduct)}>
+    <ProductContext.Provider value={{ product, setProduct }}>
       {children}
     </ProductContext.Provider>
   );

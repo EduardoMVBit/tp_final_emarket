@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import Navbar from "./components/Navbar";
+import UserContext from "./context/User";
+import Admin from "./components/Admin";
+import Products from "./components/Products";
 
 const App = function () {
-  return <div>App</div>;
+  const { esAdmin } = useContext(UserContext);
+  return (
+    <>
+      <Navbar />
+      {esAdmin() ? <Admin /> : <Products />}
+    </>
+  );
 };
 
 export default App;
